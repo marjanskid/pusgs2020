@@ -1,0 +1,34 @@
+<div id="container" style="margin-left: 15px; margin-right: 15px; margin-top: 15px;">
+    <hr/>
+    <h3 style="text-align: center;">Pretraga vozila za iznajmljivanje</h3>
+    <!-- Polja za unos parametara filtriranja -->
+    <div class="form-row">
+        <div class="col-md-4">
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="material-icons">directions_car</i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="MARKA" id="carBrandFilter">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="material-icons">attach_money</i></span>
+                </div>
+                <input type="number" class="form-control" placeholder="MAKSIMALNO PO DANU" id="carMaxPerDayPriceFilter">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary" style="margin-left: 30px" (click)="filterCars()">Filtriraj</button>
+            <button type="button" class="btn btn-secondary" style="margin-left: 15px" (click)="resetFilter()">Resetuj</button>
+        </div>
+    </div>
+    <div [hidden]="filteredCars.length !== 0">
+        <hr/>
+        <h5 style="text-align: center;">Trenutno nema dostupnih vozila koja zadovoljavaju zadate parametre.</h5>
+    </div>
+    <div [hidden]="filteredCars.length === 0">
+        <app-car-filtered [filteredCars]="filteredCars"></app-car-filtered>
+    </div>
+</div>

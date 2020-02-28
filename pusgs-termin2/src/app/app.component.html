@@ -1,0 +1,9 @@
+<div id="container" style="margin-left: 15px;">
+  <h3>PUSGS 2020 - Termin 2</h3>
+  <br/>
+  <button class="btn btn-success" routerLink="/content">Prikaži opcije</button>
+  <button class="btn btn-danger" style="margin-left: 10px;" routerLink="/">Sakrij opcije</button>
+  <button class="btn btn-primary" style="margin-left: 150px;" (click)=becomeAUser()>Postani korisnik</button>
+  <button class="btn btn-secondary" style="margin-left: 10px;" (click)=revertRole()>Poništi ulogu</button>
+  <router-outlet></router-outlet>
+</div>
